@@ -29,11 +29,11 @@ function App() {
         {phase === 'site' && (
           <motion.div
             key="content"
-            initial={{ opacity: 0, filter: 'blur(15px)' }}
+            initial={{ opacity: 0, filter: 'blur(20px)' }}
             animate={{ opacity: 1, filter: 'blur(0px)' }}
             transition={{
-              opacity: { duration: 1.2, ease: "easeOut" },
-              filter: { duration: 1.8, ease: "easeInOut", delay: 0.2 }
+              opacity: { duration: 0.8, ease: "easeOut" },
+              filter: { duration: 1, ease: "easeInOut" }
             }}
             style={{ width: '100%' }}
           >

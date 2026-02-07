@@ -31,19 +31,19 @@ export default function Hero() {
                         maxWidth: '1000px',
                         fontWeight: 900
                     }}>
-                        3D & Character <br />
-                        <span style={{ color: 'var(--text-main)' }}>Design Studio</span>
+                        Your dream. <br />
+                        <span style={{ color: 'var(--text-main)' }}>Our canvas.</span>
                     </h1>
 
                     <p style={{
                         color: 'var(--text-muted)',
-                        maxWidth: '550px',
+                        maxWidth: '650px',
                         fontSize: '1.1rem',
                         marginBottom: '3.5rem',
                         lineHeight: 1.7,
                         letterSpacing: '0.01em'
                     }}>
-                        Pushing the boundaries of digital realism through CGI, VFX, and high-end 3D illustrations.
+                        We’re a multimedia design company working across 3D, motion, video, digital, and social. Everything we create comes from one place and one mindset, so your brand stays clear and consistent wherever it shows up.
                     </p>
 
                     <div style={{ display: 'flex', gap: '30px' }}>
