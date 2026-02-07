@@ -9,15 +9,26 @@ export default function PixelReveal({ onFinished }) {
     // Animation variants for the blocks
     const blockVariants = {
         initial: { opacity: 1 },
-        reveal: (i) => ({
-            opacity: 0,
-            transition: {
-                duration: 0.4,
-                // Staggered delay based on random-ish pattern or simple order
-                delay: (i % columns) * 0.05 + Math.floor(i / columns) * 0.05 + Math.random() * 0.2,
-                ease: "easeInOut"
-            }
-        })
+        reveal: (i) => {
+            const x = i % columns;
+            const y = Math.floor(i / columns);
+            const centerX = (columns - 1) / 2;
+            const centerY = (rows - 1) / 2;
+
+            // Calculate distance from center
+            const distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+            const maxDistance = Math.sqrt(Math.pow(centerX, 2) + Math.pow(centerY, 2));
+
+            return {
+                opacity: 0,
+                transition: {
+                    duration: 0.3,
+                    // Delay based on distance from center for a radial reveal
+                    delay: (distance / maxDistance) * 0.5 + Math.random() * 0.15,
+                    ease: "easeOut"
+                }
+            };
+        }
     };
 
     return (
