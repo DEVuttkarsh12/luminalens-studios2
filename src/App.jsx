@@ -14,7 +14,7 @@ import CustomCursor from './components/CustomCursor';
 import './index.css';
 
 function App() {
-  const [phase, setPhase] = useState('loading'); // 'loading', 'video', 'transition', 'site'
+  const [phase, setPhase] = useState('loading'); // 'loading', 'video', 'site'
 
   return (
     <main>
@@ -24,24 +24,16 @@ function App() {
           <Loader key="loader" onFinished={() => setPhase('video')} />
         )}
         {phase === 'video' && (
-          <IntroVideo key="video" onFinished={() => setPhase('transition')} />
+          <IntroVideo key="video" onFinished={() => setPhase('site')} />
         )}
-        {(phase === 'transition' || phase === 'site') && (
+        {phase === 'site' && (
           <motion.div
             key="content"
-            initial={{ opacity: phase === 'transition' ? 0 : 1 }}
-            animate={{
-              opacity: 1,
-              filter: phase === 'transition' ? 'blur(10px)' : 'blur(0px)'
-            }}
+            initial={{ opacity: 0, filter: 'blur(15px)' }}
+            animate={{ opacity: 1, filter: 'blur(0px)' }}
             transition={{
-              opacity: { duration: 1.5, ease: "easeOut" },
-              filter: { duration: 2, ease: "easeInOut" }
-            }}
-            onAnimationComplete={() => {
-              if (phase === 'transition') {
-                setTimeout(() => setPhase('site'), 1000);
-              }
+              opacity: { duration: 1.2, ease: "easeOut" },
+              filter: { duration: 1.8, ease: "easeInOut", delay: 0.2 }
             }}
             style={{ width: '100%' }}
           >
