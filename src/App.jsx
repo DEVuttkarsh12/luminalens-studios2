@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Services from './components/Services';
 import About from './components/About';
-import Offerings from './components/Offerings';
+import Testimonials from './components/Testimonials';
 import Contact, { Footer } from './components/Contact';
 import Background from './components/Background';
 import Loader from './components/Loader';
@@ -42,10 +42,10 @@ function App() {
           >
             <Navbar />
             <Hero />
-            <Services />
             <Portfolio />
+            <Services />
             <About />
-            <Offerings />
+            <Testimonials />
             <Contact />
             <Footer />
           </motion.div>

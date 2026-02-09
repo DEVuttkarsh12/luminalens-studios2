@@ -16,6 +16,7 @@ export default function Navbar() {
         { name: 'Work', href: '#work' },
         { name: 'Services', href: '#services' },
         { name: 'About', href: '#about' },
+        { name: 'Testimonials', href: '#testimonials' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -37,8 +38,8 @@ export default function Navbar() {
                 alignItems: 'center',
                 justifyContent: 'space-between'
             }}>
-                <div style={{ fontWeight: 900, fontSize: '1.2rem', color: 'var(--text-main)', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                    Luminalens <span style={{ color: 'var(--primary-glow)', fontWeight: 800 }}>Studios</span>
+                <div style={{ fontWeight: 900, fontSize: '1.2rem', color: '#fff', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                    <span style={{ color: 'var(--primary-glow)', fontWeight: 800 }}>Luminalens</span> Studios
                 </div>
 
                 {/* Desktop Menu */}

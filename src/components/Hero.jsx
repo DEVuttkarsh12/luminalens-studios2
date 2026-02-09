@@ -44,7 +44,8 @@ export default function Hero() {
                         marginBottom: '2.5rem',
                         maxWidth: '850px',
                         fontWeight: 900,
-                        textAlign: 'left'
+                        textAlign: 'left',
+                        color: '#fff'
                     }}
                         className="hero-title"
                     >
@@ -53,7 +54,8 @@ export default function Hero() {
                             background: 'var(--accent-gradient)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            textShadow: '0 20px 40px rgba(79,209,197,0.1)'
+                            filter: 'drop-shadow(0 10px 20px rgba(127, 58, 161, 0.3))',
+                            textShadow: '0 0 2px rgba(255,255,255,0.1)'
                         }}>Our canvas.</span>
                     </h1>
 
@@ -85,7 +87,7 @@ export default function Hero() {
                             fontSize: '0.9rem',
                             background: 'transparent'
                         }}
-                            onMouseEnter={(e) => e.target.style.background = 'rgba(79,209,197,0.1)'}
+                            onMouseEnter={(e) => e.target.style.background = 'rgba(127, 58, 161, 0.1)'}
                             onMouseLeave={(e) => e.target.style.background = 'transparent'}
                         >
                             Our Services

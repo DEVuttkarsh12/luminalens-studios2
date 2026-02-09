@@ -2,8 +2,50 @@ import { motion } from 'framer-motion';
 
 export default function About() {
     return (
-        <section id="about" className="section" style={{ background: 'var(--bg-surface)' }}>
-            <div className="container">
+        <section id="about" className="section" style={{ position: 'relative', overflow: 'hidden', background: 'transparent' }}>
+            {/* Dynamic Background Elements */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1],
+                        x: [0, 50, 0],
+                        y: [0, -30, 0]
+                    }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                    style={{
+                        position: 'absolute',
+                        top: '-10%',
+                        left: '-10%',
+                        width: '50%',
+                        height: '60%',
+                        background: 'radial-gradient(circle, var(--primary-glow) 0%, transparent 70%)',
+                        filter: 'blur(80px)',
+                        borderRadius: '50%'
+                    }}
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.05, 0.15, 0.05],
+                        x: [0, -40, 0],
+                        y: [0, 60, 0]
+                    }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    style={{
+                        position: 'absolute',
+                        bottom: '10%',
+                        right: '-5%',
+                        width: '40%',
+                        height: '50%',
+                        background: 'radial-gradient(circle, var(--secondary-glow) 0%, transparent 70%)',
+                        filter: 'blur(100px)',
+                        borderRadius: '50%'
+                    }}
+                />
+            </div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
@@ -17,22 +59,22 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                     >
                         <span style={{ color: 'var(--primary-glow)', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', fontSize: '0.9rem' }}>The Mission</span>
-                        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginTop: '1rem', marginBottom: '2rem' }}>Crafting Virtual <br />Realities.</h2>
+                        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginTop: '1rem', marginBottom: '2rem', fontWeight: 900 }}>Crafting Virtual <br />Realities.</h2>
                         <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
                             We are a collective of designers, sculptors, and tech pioneers dedicated to the art of the 3rd dimension. We don't just create assets; we build immersive narratives that blur the line between the physical and the digital.
                         </p>
                         <div style={{ display: 'flex', gap: '30px', marginTop: '40px' }}>
                             <div>
-                                <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)' }}>10k+</h4>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>Inr Project Scale</p>
+                                <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)', fontWeight: 800 }}>10k+</h4>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>Inr Project Scale</p>
                             </div>
                             <div>
-                                <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)' }}>100+</h4>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>Assets Created</p>
+                                <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)', fontWeight: 800 }}>100+</h4>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>Assets Created</p>
                             </div>
                             <div>
-                                <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)' }}>5+</h4>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase' }}>Global Awards</p>
+                                <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)', fontWeight: 800 }}>5+</h4>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>Global Awards</p>
                             </div>
                         </div>
                     </motion.div>
@@ -44,18 +86,19 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         style={{ position: 'relative' }}
                     >
-                        <div style={{
+                        <div className="glass" style={{
                             width: '100%',
                             height: '500px',
                             borderRadius: '30px',
                             overflow: 'hidden',
                             position: 'relative',
-                            zIndex: 2
+                            zIndex: 2,
+                            border: '1px solid var(--glass-border)'
                         }}>
                             <img
                                 src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop"
                                 alt="Studio Team"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }}
                             />
                             <div style={{
                                 position: 'absolute',
@@ -63,22 +106,28 @@ export default function About() {
                                 left: 0,
                                 width: '100%',
                                 height: '100%',
-                                background: 'linear-gradient(45deg, rgba(0, 242, 255, 0.2), transparent)'
+                                background: 'linear-gradient(45deg, rgba(84, 22, 181, 0.4), transparent)'
                             }}></div>
                         </div>
 
                         {/* Decorative element */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '-20px',
-                            right: '-20px',
-                            width: '200px',
-                            height: '200px',
-                            border: '2px solid var(--primary-glow)',
-                            borderRadius: '30px',
-                            zIndex: 1,
-                            opacity: 0.3
-                        }}></div>
+                        <motion.div
+                            animate={{
+                                scale: [1, 1.05, 1],
+                                opacity: [0.2, 0.4, 0.2]
+                            }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            style={{
+                                position: 'absolute',
+                                top: '-20px',
+                                right: '-20px',
+                                width: '200px',
+                                height: '200px',
+                                border: '2px solid var(--primary-glow)',
+                                borderRadius: '30px',
+                                zIndex: 1
+                            }}
+                        ></motion.div>
                     </motion.div>
                 </div>
             </div>

@@ -1,98 +1,193 @@
 import { motion } from 'framer-motion';
 
 const projects = [
-    { id: 1, title: 'Neon Cyberpunk', category: '3D Illustration', img: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop' },
-    { id: 2, title: 'Organic Mech', category: 'Character Design', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop' },
-    { id: 3, title: 'Void Ritual', category: 'VFX / CGI', img: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1954&auto=format&fit=crop' },
-    { id: 4, title: 'Glitch Dimension', category: '3D Environment', img: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop' },
-    { id: 5, title: 'Synthetic Soul', category: 'Character Design', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop' },
-    { id: 6, title: 'Ether Oasis', category: 'Environment', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop' },
+    {
+        id: 1,
+        title: 'Neon Cyberpunk',
+        category: '3D Illustration',
+        description: 'A deep dive into futuristic urban landscapes, blending neon aesthetics with complex structural modeling for a premium sci-fi feel.',
+        img: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop'
+    },
+    {
+        id: 2,
+        title: 'Organic Mech',
+        category: 'Character Design',
+        description: 'Exploring the intersection of biology and machinery. This project focuses on intricate detailing and realistic surface textures of synthetic organisms.',
+        img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop'
+    },
+    {
+        id: 3,
+        title: 'Void Ritual',
+        category: 'VFX / CGI',
+        description: 'A cinematic visual effect sequence capturing the essence of dark energy and abstract motion through custom particle systems.',
+        img: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1954&auto=format&fit=crop'
+    },
+    {
+        id: 4,
+        title: 'Glitch Dimension',
+        category: '3D Environment',
+        description: 'Breaking the laws of virtual reality with distorted geometries and digital anomalies, creating an immersive, unstable environment.',
+        img: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop'
+    },
 ];
 
 export default function Portfolio() {
     return (
-        <section id="work" className="section" style={{ background: 'var(--bg-surface)' }}>
+        <section id="work" className="section" style={{ background: 'transparent', paddingBottom: '150px' }}>
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    style={{ marginBottom: '5rem' }}
+                    style={{ marginBottom: '8rem', textAlign: 'center' }}
                 >
+                    <span style={{
+                        color: 'var(--primary-glow)',
+                        fontWeight: 700,
+                        letterSpacing: '0.3em',
+                        textTransform: 'uppercase',
+                        fontSize: '0.8rem',
+                        display: 'block',
+                        marginBottom: '1rem'
+                    }}>
+                        Latest Work
+                    </span>
                     <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '1.5rem', fontWeight: 900 }}>Selected Artifacts</h2>
-                    <div style={{ width: '60px', height: '1px', background: '#fff', opacity: 0.3 }}></div>
+                    <div style={{ width: '40px', height: '2px', background: 'var(--accent-gradient)', margin: '0 auto' }}></div>
                 </motion.div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
-                    gap: '40px',
-                }}>
-                    {projects.map((project, index) => (
-                        <motion.div
-                            key={project.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            whileHover={{ y: -8 }}
-                            className="glass"
-                            style={{
-                                position: 'relative',
-                                overflow: 'hidden',
-                                height: '500px',
-                                borderRadius: '8px',
-                                cursor: 'pointer',
-                                border: '1px solid rgba(255,255,255,0.05)'
-                            }}
-                        >
-                            <img
-                                src={project.img}
-                                alt={project.title}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '160px' }}>
+                    {projects.map((project, index) => {
+                        const isEven = index % 2 !== 0;
+                        return (
+                            <motion.div
+                                key={project.id}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
                                 style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                    filter: 'grayscale(100%) brightness(0.7)',
-                                    transition: '1s cubic-bezier(0.16, 1, 0.3, 1)'
+                                    display: 'flex',
+                                    flexDirection: isEven ? 'row-reverse' : 'row',
+                                    alignItems: 'center',
+                                    gap: '80px',
+                                    justifyContent: 'space-between'
                                 }}
-                                onMouseEnter={(e) => {
-                                    e.target.style.transform = 'scale(1.05)';
-                                    e.target.style.filter = 'grayscale(0%) brightness(0.9)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.target.style.transform = 'scale(1)';
-                                    e.target.style.filter = 'grayscale(100%) brightness(0.7)';
-                                }}
-                            />
+                                className="project-row"
+                            >
+                                {/* Image Side */}
+                                <div style={{ flex: '1.2', position: 'relative' }}>
+                                    <motion.div
+                                        whileHover={{ scale: 1.02 }}
+                                        transition={{ duration: 0.4 }}
+                                        className="glass"
+                                        style={{
+                                            borderRadius: '12px',
+                                            overflow: 'hidden',
+                                            aspectRatio: '16/10',
+                                            border: '1px solid var(--glass-border)',
+                                            boxShadow: '0 30px 60px rgba(0,0,0,0.3)'
+                                        }}
+                                    >
+                                        <img
+                                            src={project.img}
+                                            alt={project.title}
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                filter: 'grayscale(20%) brightness(0.9)',
+                                                transition: '0.5s ease'
+                                            }}
+                                        />
+                                    </motion.div>
 
-                            <div style={{
-                                position: 'absolute',
-                                bottom: 0,
-                                left: 0,
-                                width: '100%',
-                                padding: '40px',
-                                background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-                                zIndex: 2
-                            }}>
-                                <span style={{
-                                    color: 'rgba(255,255,255,0.6)',
-                                    fontSize: '0.75rem',
-                                    fontWeight: 700,
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.2em',
-                                    display: 'block',
-                                    marginBottom: '10px'
+                                    {/* Numbering Background */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        top: '-40px',
+                                        [isEven ? 'right' : 'left']: '-40px',
+                                        fontSize: '8rem',
+                                        fontWeight: 900,
+                                        opacity: 0.03,
+                                        zIndex: -1,
+                                        color: '#fff'
+                                    }}>
+                                        0{index + 1}
+                                    </div>
+                                </div>
+
+                                {/* Content Side */}
+                                <div style={{
+                                    flex: '1',
+                                    textAlign: isEven ? 'right' : 'left',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: isEven ? 'flex-end' : 'flex-start'
                                 }}>
-                                    {project.category}
-                                </span>
-                                <h3 style={{ fontSize: '1.8rem', fontWeight: 700, letterSpacing: '-0.02em' }}>{project.title}</h3>
-                            </div>
-                        </motion.div>
-                    ))}
+                                    <span style={{
+                                        color: 'var(--text-muted)',
+                                        fontSize: '0.8rem',
+                                        fontWeight: 700,
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.2em',
+                                        marginBottom: '1rem'
+                                    }}>
+                                        {project.category}
+                                    </span>
+                                    <h3 style={{
+                                        fontSize: 'clamp(2rem, 3vw, 3rem)',
+                                        fontWeight: 800,
+                                        marginBottom: '2rem',
+                                        lineHeight: 1.1
+                                    }}>
+                                        {project.title}
+                                    </h3>
+                                    <p style={{
+                                        color: 'var(--text-muted)',
+                                        fontSize: '1.1rem',
+                                        lineHeight: 1.6,
+                                        marginBottom: '2.5rem',
+                                        maxWidth: '450px'
+                                    }}>
+                                        {project.description}
+                                    </p>
+                                    <button style={{
+                                        borderBottom: '1px solid var(--primary-glow)',
+                                        paddingBottom: '5px',
+                                        color: 'var(--text-main)',
+                                        fontWeight: 600,
+                                        letterSpacing: '0.1em',
+                                        fontSize: '0.9rem',
+                                        transition: '0.3s ease'
+                                    }}
+                                        onMouseEnter={(e) => e.target.style.color = 'var(--primary-glow)'}
+                                        onMouseLeave={(e) => e.target.style.color = 'var(--text-main)'}
+                                    >
+                                        VIEW PROJECT
+                                    </button>
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
+
+            <style>{`
+                @media (max-width: 992px) {
+                    .project-row {
+                        flex-direction: column !important;
+                        gap: 40px !important;
+                        text-align: left !important;
+                        align-items: flex-start !important;
+                    }
+                    .project-row div[style*="text-align: right"] {
+                        text-align: left !important;
+                        align-items: flex-start !important;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
