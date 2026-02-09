@@ -49,14 +49,14 @@ export default function Hero() {
                     }}
                         className="hero-title"
                     >
-                        Your dream. <br />
+                        Your dream <br />
                         <span style={{
                             background: 'var(--accent-gradient)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             filter: 'drop-shadow(0 10px 20px rgba(127, 58, 161, 0.3))',
                             textShadow: '0 0 2px rgba(255,255,255,0.1)'
-                        }}>Our canvas.</span>
+                        }}>Our canvas</span>
                     </h1>
 
                     <p style={{

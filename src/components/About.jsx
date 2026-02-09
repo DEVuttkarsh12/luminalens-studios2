@@ -58,23 +58,27 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span style={{ color: 'var(--primary-glow)', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', fontSize: '0.9rem' }}>The Mission</span>
-                        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginTop: '1rem', marginBottom: '2rem', fontWeight: 900 }}>Crafting Virtual <br />Realities.</h2>
+                        <span style={{ color: 'var(--primary-glow)', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', fontSize: '0.9rem' }}>
+
+                        </span>
+                        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginTop: '1rem', marginBottom: '2rem', fontWeight: 900 }}>Who We Work<br />As.</h2>
                         <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-                            We are a collective of designers, sculptors, and tech pioneers dedicated to the art of the 3rd dimension. We don't just create assets; we build immersive narratives that blur the line between the physical and the digital.
+                            We’re a multidisciplinary design company bringing together designers, visual artists, and creative thinkers. We work closely, move with intention, and focus on building work that feels clear and consistent across platforms.
+
                         </p>
                         <div style={{ display: 'flex', gap: '30px', marginTop: '40px' }}>
                             <div>
                                 <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)', fontWeight: 800 }}>10k+</h4>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>Inr Project Scale</p>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>creative professionals
+                                </p>
                             </div>
                             <div>
                                 <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)', fontWeight: 800 }}>100+</h4>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>Assets Created</p>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>finished projects</p>
                             </div>
                             <div>
                                 <h4 style={{ fontSize: '2.5rem', color: 'var(--primary-glow)', fontWeight: 800 }}>5+</h4>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>Global Awards</p>
+                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 600 }}>ndustries partnered with</p>
                             </div>
                         </div>
                     </motion.div>
